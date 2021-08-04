@@ -37,6 +37,10 @@ public class Posts  {
         this.author = author;
     }
 
+
+    //p.115
+    //jpa의 영속성 컨텍스트 덕분에 데이터의 값을 변경하면 트랜젝션이 끝나는 시점에 해당 테이블에 변경분을 자동 반영함.
+    //때문에 update 쿼리를 날릴 필요 없음.
     public void update(String title, String content) {
         this.title = title;
         this.content = content;
