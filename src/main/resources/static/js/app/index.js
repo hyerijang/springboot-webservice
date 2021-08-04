@@ -1,5 +1,9 @@
 var main = {
     init : function () {
+        // function 안에서 변수 접근 권한 제한
+        // 브라우저의 스코프는 공용 공간으로 쓰이기 때문에 나중에 로딩된 a.js의 init,save가 먼저 로딩된 js의 function 덮어쓰게된다.
+        // 때문에 var index 객체를 만들어서(아래의 var _this = this;)
+        // 해당 객체에서 필요한 모든 function을 선언, index 객체 내에서만 function이 유효하도록 한다.
         var _this = this;
         $('#btn-save').on('click', function () {
             _this.save();
