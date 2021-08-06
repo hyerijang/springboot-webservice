@@ -24,7 +24,9 @@ public class IndexController {
 //    }
 
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) //서버 템플릿 엔진에서 사용할 수 있는 객체 저장
+    {
+        model.addAttribute("posts", postsService.findAllDesc()); //index.mustache 에 post라는 이름으로  postsService.findAllDesc()의 결과 저장
         return "index";
     }
 
@@ -37,7 +39,6 @@ public class IndexController {
     public String postsUpdate(@PathVariable Long id, Model model) {
         PostsResponseDto dto = postsService.findById(id);
         model.addAttribute("post", dto);
-
         return "posts-update";
     }
 }

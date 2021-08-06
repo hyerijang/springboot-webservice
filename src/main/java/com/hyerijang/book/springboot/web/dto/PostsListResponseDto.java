@@ -12,6 +12,7 @@ public class PostsListResponseDto {
     private String author;
     private LocalDateTime modifiedDate;
 
+    //얘는 @Builder 안씀
     public PostsListResponseDto(Posts entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
