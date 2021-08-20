@@ -1,6 +1,6 @@
 package com.hyerijang.book.springboot.config;
 
-import com.hyerijang.book.springboot.web.dto.LoginUserArgumentResolver;
+import com.hyerijang.book.springboot.config.auth.LoginUserArgumentResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;

@@ -1,5 +1,6 @@
 package com.hyerijang.book.springboot.web;
 
+import com.hyerijang.book.springboot.config.auth.LoginUser;
 import com.hyerijang.book.springboot.config.auth.dto.SessionUser;
 import com.hyerijang.book.springboot.service.posts.PostsService;
 import com.hyerijang.book.springboot.web.dto.PostsResponseDto;

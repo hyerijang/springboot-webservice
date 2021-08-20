@@ -1,7 +1,6 @@
-package com.hyerijang.book.springboot.web.dto;
+package com.hyerijang.book.springboot.config.auth;
 
 import com.hyerijang.book.springboot.config.auth.dto.SessionUser;
-import com.hyerijang.book.springboot.web.LoginUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
