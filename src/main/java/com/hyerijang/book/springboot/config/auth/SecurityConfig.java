@@ -12,7 +12,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final CustomOAuth2UserService customOAuth2UserService;
 
-    protected void Configure(HttpSecurity http) throws Exception{
+    @Override
+    protected void configure(HttpSecurity http) throws Exception{
         http
                 .csrf().disable()//h2-console 사용 위해 disable
                 .headers().frameOptions().disable() //h2-console 사용 위해 disable
