@@ -28,10 +28,9 @@ public class IndexController {
 //    }
 
     @GetMapping("/")
-    public String index(Model model) //서버 템플릿 엔진에서 사용할 수 있는 객체 저장
+    public String index(Model model , @LoginUser SessionUser user) //서버 템플릿 엔진에서 사용할 수 있는 객체 저장
     {
         model.addAttribute("posts", postsService.findAllDesc()); //index.mustache 에 post라는 이름으로  postsService.findAllDesc()의 결과 저장
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
