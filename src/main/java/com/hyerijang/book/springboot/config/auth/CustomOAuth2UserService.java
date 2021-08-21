@@ -5,6 +5,7 @@ import com.hyerijang.book.springboot.config.auth.dto.SessionUser;
 import com.hyerijang.book.springboot.domain.user.User;
 import com.hyerijang.book.springboot.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
 
+@Log4j2
 @RequiredArgsConstructor
 @Service
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
@@ -44,6 +46,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
         User user = saveOrUpdate(attributes);
 
+        log.info("유저 이름: " + user.getName());
         //SessionUser : 세션에 사용자 정보를 저장하기 위한 Dto 클래스
         // 기존에 있는 User 클래스를 사용하지 않고 SessionUser 라는 클래스를 따로 만든 이유?
         //   User 클래스를 그대로 사용하면 직렬화를 구현하지 않았다는 에러가 뜬다.
